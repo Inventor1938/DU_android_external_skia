@@ -45,7 +45,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_SDCLANG_LTO := true
 LOCAL_SDCLANG_LTO_LDFLAGS := -O3 -fPIC
-LOCAL_FDO_SUPPORT := true
+#LOCAL_FDO_SUPPORT := true
 # This should be the last -Oxxx specified in LOCAL_CFLAGS
 LOCAL_CFLAGS += -O3
 
