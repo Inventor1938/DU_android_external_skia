@@ -837,8 +837,7 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_SDCLANG_LTO := true
 LOCAL_FDO_SUPPORT := true
 
-
-ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
+ifeq ($(TARGET_HAVE_QC_PERF),true)
         LOCAL_WHOLE_STATIC_LIBRARIES += libqc-skia
 endif
 
