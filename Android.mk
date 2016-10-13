@@ -44,7 +44,8 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SDCLANG_LTO := true
-#LOCAL_FDO_SUPPORT := true
+LOCAL_SDCLANG_LTO_LDFLAGS := -O3 -fPIC -funsafe-math-optimizations
+LOCAL_FDO_SUPPORT := true
 # This should be the last -Oxxx specified in LOCAL_CFLAGS
 LOCAL_CFLAGS += -O3
 
@@ -837,7 +838,9 @@ LOCAL_WHOLE_STATIC_LIBRARIES := libskia_static
 LOCAL_SHARED_LIBRARIES := \
         libcutils
 
-ifeq ($(TARGET_HAVE_QC_PERF),true)
+LOCAL_FDO_SUPPORT := true
+
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
         LOCAL_WHOLE_STATIC_LIBRARIES += libqc-skia
 endif
 
